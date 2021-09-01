@@ -1,70 +1,62 @@
 {
 	"nodes": [
 		{
-			"x": 308,
-			"y": 235,
-			"id": 0,
+			"x": 108,
+			"y": 316,
+			"id": 6,
 			"type": "hrt.shgraph.ShaderParam",
 			"properties": {
 				"parameterId": 0
 			}
 		},
 		{
-			"x": 884,
-			"y": 222,
-			"id": 1,
+			"x": 922,
+			"y": 424,
+			"id": 7,
 			"type": "hrt.shgraph.ShaderOutput",
 			"properties": {
 				"variable": [
 					"pixelColor",
-					"TVec"
+					"TVec",
+					[
+						4,
+						{
+							"_hx_index": 1,
+							"__enum__": "hxsl.VecType"
+						}
+					]
 				]
 			}
 		},
 		{
-			"x": 606,
-			"y": 206,
-			"id": 2,
-			"type": "hrt.shgraph.nodes.Multiply",
+			"x": 454,
+			"y": 336,
+			"id": 10,
+			"type": "hrt.shgraph.nodes.SubGraph",
 			"properties": {
-				"prop_a": null,
-				"prop_b": null
-			}
-		},
-		{
-			"x": 307,
-			"y": 385,
-			"id": 3,
-			"type": "hrt.shgraph.ShaderParam",
-			"properties": {
-				"parameterId": 1
+				"pathShaderGraph": "shaders/subshaders/test.hlshader",
+				"parametersValues": []
 			}
 		}
 	],
 	"edges": [
 		{
-			"idOutput": 2,
-			"nameOutput": "output",
-			"idInput": 1,
+			"idOutput": 10,
+			"nameOutput": "shgraph_10_2",
+			"idInput": 7,
 			"nameInput": "input"
 		},
 		{
-			"idOutput": 3,
+			"idOutput": 6,
 			"nameOutput": "output",
-			"idInput": 2,
-			"nameInput": "b"
-		},
-		{
-			"idOutput": 0,
-			"nameOutput": "output",
-			"idInput": 2,
-			"nameInput": "a"
+			"idInput": 10,
+			"nameInput": "shgraph_10_param_1"
 		}
 	],
 	"parameters": [
 		{
 			"id": 0,
-			"name": "col_1",
+			"name": "color1",
 			"type": [
 				"TVec",
 				"4,VFloat"

@@ -1,0 +1,174 @@
+{
+	"nodes": [
+		{
+			"x": 148,
+			"y": 226,
+			"id": 0,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 0
+			}
+		},
+		{
+			"x": 157,
+			"y": 497,
+			"id": 1,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 1
+			}
+		},
+		{
+			"x": 284,
+			"y": 360,
+			"id": 2,
+			"type": "hrt.shgraph.nodes.StripAlpha",
+			"properties": {}
+		},
+		{
+			"x": 480,
+			"y": 382,
+			"id": 3,
+			"type": "hrt.shgraph.nodes.Subtract",
+			"properties": {
+				"prop_a": 1,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 749,
+			"y": 349,
+			"id": 4,
+			"type": "hrt.shgraph.nodes.Add",
+			"properties": {
+				"prop_a": null,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 568,
+			"y": 233,
+			"id": 5,
+			"type": "hrt.shgraph.nodes.Multiply",
+			"properties": {
+				"prop_a": null,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 591,
+			"y": 456,
+			"id": 6,
+			"type": "hrt.shgraph.nodes.Multiply",
+			"properties": {
+				"prop_a": null,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 903,
+			"y": 351,
+			"id": 7,
+			"type": "hrt.shgraph.ShaderOutput",
+			"properties": {
+				"variable": [
+					"Out",
+					"TVec",
+					[
+						4,
+						{
+							"_hx_index": 1,
+							"__enum__": "hxsl.VecType"
+						}
+					]
+				]
+			}
+		}
+	],
+	"edges": [
+		{
+			"idOutput": 0,
+			"nameOutput": "output",
+			"idInput": 2,
+			"nameInput": "input"
+		},
+		{
+			"idOutput": 2,
+			"nameOutput": "a",
+			"idInput": 3,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 6,
+			"nameOutput": "output",
+			"idInput": 4,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 5,
+			"nameOutput": "output",
+			"idInput": 4,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 0,
+			"nameOutput": "output",
+			"idInput": 5,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 2,
+			"nameOutput": "a",
+			"idInput": 5,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 1,
+			"nameOutput": "output",
+			"idInput": 6,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 3,
+			"nameOutput": "output",
+			"idInput": 6,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 4,
+			"nameOutput": "output",
+			"idInput": 7,
+			"nameInput": "input"
+		}
+	],
+	"parameters": [
+		{
+			"id": 0,
+			"name": "Src",
+			"type": [
+				"TVec",
+				"4,VFloat"
+			],
+			"defaultValue": [
+				0,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"id": 1,
+			"name": "Dst",
+			"type": [
+				"TVec",
+				"4,VFloat"
+			],
+			"defaultValue": [
+				0,
+				0,
+				0,
+				1
+			]
+		}
+	]
+}

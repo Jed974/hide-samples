@@ -1,0 +1,307 @@
+{
+	"nodes": [
+		{
+			"x": 102,
+			"y": 229,
+			"id": 0,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 1
+			}
+		},
+		{
+			"x": 1272,
+			"y": 462,
+			"id": 1,
+			"type": "hrt.shgraph.ShaderOutput",
+			"properties": {
+				"variable": [
+					"pixelColor",
+					"TVec",
+					[
+						4,
+						{
+							"_hx_index": 1,
+							"__enum__": "hxsl.VecType"
+						}
+					]
+				]
+			}
+		},
+		{
+			"x": -110,
+			"y": 418,
+			"id": 2,
+			"type": "hrt.shgraph.ShaderInput",
+			"properties": {
+				"variable": "uv"
+			}
+		},
+		{
+			"x": 444,
+			"y": 209,
+			"id": 3,
+			"type": "hrt.shgraph.nodes.SmoothStep",
+			"properties": {}
+		},
+		{
+			"x": 283,
+			"y": 260,
+			"id": 4,
+			"type": "hrt.shgraph.nodes.Subtract",
+			"properties": {
+				"prop_a": 1,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 86,
+			"y": 336,
+			"id": 5,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 2
+			}
+		},
+		{
+			"x": 691,
+			"y": 346,
+			"id": 10,
+			"type": "hrt.shgraph.nodes.Multiply",
+			"properties": {
+				"prop_a": null,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 133,
+			"y": 535,
+			"id": 11,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 0
+			}
+		},
+		{
+			"x": 404,
+			"y": 385,
+			"id": 18,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 4
+			}
+		},
+		{
+			"x": 284,
+			"y": 369,
+			"id": 23,
+			"type": "hrt.shgraph.nodes.Length",
+			"properties": {}
+		},
+		{
+			"x": 78,
+			"y": 417,
+			"id": 24,
+			"type": "hrt.shgraph.nodes.UvToScreen",
+			"properties": {}
+		},
+		{
+			"x": 577,
+			"y": 203,
+			"id": 25,
+			"type": "hrt.shgraph.nodes.Subtract",
+			"properties": {
+				"prop_a": 1,
+				"prop_b": null
+			}
+		},
+		{
+			"x": 732,
+			"y": 655,
+			"id": 26,
+			"type": "hrt.shgraph.ShaderInput",
+			"properties": {
+				"variable": "pixelColor"
+			}
+		},
+		{
+			"x": 1073,
+			"y": 497,
+			"id": 43,
+			"type": "hrt.shgraph.nodes.Mix",
+			"properties": {}
+		},
+		{
+			"x": 318,
+			"y": 521,
+			"id": 44,
+			"type": "hrt.shgraph.nodes.StripAlpha",
+			"properties": {}
+		},
+		{
+			"x": 805,
+			"y": 510,
+			"id": 45,
+			"type": "hrt.shgraph.nodes.CombineAlpha",
+			"properties": {
+				"prop_a": null
+			}
+		}
+	],
+	"edges": [
+		{
+			"idOutput": 43,
+			"nameOutput": "output",
+			"idInput": 1,
+			"nameInput": "input"
+		},
+		{
+			"idOutput": 0,
+			"nameOutput": "output",
+			"idInput": 3,
+			"nameInput": "x"
+		},
+		{
+			"idOutput": 4,
+			"nameOutput": "output",
+			"idInput": 3,
+			"nameInput": "y"
+		},
+		{
+			"idOutput": 23,
+			"nameOutput": "output",
+			"idInput": 3,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 0,
+			"nameOutput": "output",
+			"idInput": 4,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 5,
+			"nameOutput": "output",
+			"idInput": 4,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 25,
+			"nameOutput": "output",
+			"idInput": 10,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 18,
+			"nameOutput": "output",
+			"idInput": 10,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 24,
+			"nameOutput": "output",
+			"idInput": 23,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 2,
+			"nameOutput": "output",
+			"idInput": 24,
+			"nameInput": "uv"
+		},
+		{
+			"idOutput": 3,
+			"nameOutput": "output",
+			"idInput": 25,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 26,
+			"nameOutput": "output",
+			"idInput": 43,
+			"nameInput": "x"
+		},
+		{
+			"idOutput": 45,
+			"nameOutput": "output",
+			"idInput": 43,
+			"nameInput": "y"
+		},
+		{
+			"idOutput": 10,
+			"nameOutput": "output",
+			"idInput": 43,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 11,
+			"nameOutput": "output",
+			"idInput": 44,
+			"nameInput": "input"
+		},
+		{
+			"idOutput": 44,
+			"nameOutput": "rgb",
+			"idInput": 45,
+			"nameInput": "rgb"
+		},
+		{
+			"idOutput": 10,
+			"nameOutput": "output",
+			"idInput": 45,
+			"nameInput": "a"
+		}
+	],
+	"parameters": [
+		{
+			"id": 0,
+			"name": "color",
+			"type": [
+				"TVec",
+				"4,VFloat"
+			],
+			"defaultValue": [
+				0.6352941176470588,
+				0.08235294117647059,
+				0.8941176470588235,
+				1
+			]
+		},
+		{
+			"id": 1,
+			"name": "radius",
+			"type": [
+				"TFloat",
+				""
+			],
+			"defaultValue": 1
+		},
+		{
+			"id": 2,
+			"name": "softness",
+			"type": [
+				"TFloat",
+				""
+			],
+			"defaultValue": 1
+		},
+		{
+			"id": 4,
+			"name": "alpha",
+			"type": [
+				"TFloat",
+				""
+			],
+			"defaultValue": 1
+		},
+		{
+			"id": 5,
+			"name": "Param_5",
+			"type": [
+				"TSampler2D",
+				""
+			],
+			"defaultValue": "textures/dirt01.jpg"
+		}
+	]
+}

@@ -33,6 +33,18 @@
 							0.5568627450980392,
 							0.7764705882352941,
 							1
+						],
+						"sub_4_color": [
+							0.396078431372549,
+							0.14901960784313725,
+							0.6784313725490196,
+							1
+						],
+						"color1": [
+							0.6588235294117647,
+							0.11764705882352941,
+							0.11764705882352941,
+							1
 						]
 					}
 				}
@@ -85,7 +97,7 @@
 							"mode": "PBR",
 							"blend": "None",
 							"shadows": true,
-							"culling": true,
+							"culling": "Back",
 							"depthTest": "Less",
 							"colorMask": 15,
 							"enableStencil": false
@@ -102,6 +114,51 @@
 			"x": 3.33,
 			"y": 3.68,
 			"rotationZ": 122.1
+		},
+		{
+			"type": "renderProps",
+			"name": "renderProps",
+			"props": {
+				"PBR": {
+					"mode": "Pbr",
+					"emissive": 1,
+					"exposure": 0,
+					"sky": "Background",
+					"tone": "Linear",
+					"occlusion": 1
+				}
+			},
+			"children": [
+				{
+					"type": "rfx.ScreenShaderGraph",
+					"name": "ScreenShaderGraph",
+					"source": "shaders/SoftLight.hlshader",
+					"props": {
+						"softLightRaw": "fx/PostProcess/softLight_raw.png",
+						"amount": 1
+					}
+				}
+			]
+		},
+		{
+			"type": "reference",
+			"name": "testfx",
+			"source": "fx/testfx.fx",
+			"x": 1.01,
+			"y": 7.72,
+			"z": -0.1,
+			"children": [
+				{
+					"type": "hlshader",
+					"name": "Dissolve",
+					"source": "shaders/Dissolve.hlshader",
+					"props": {
+						"width": 0.13,
+						"progress": 0.23,
+						"saturation": 0.26
+					}
+				}
+			]
 		}
 	]
 }

@@ -1,0 +1,210 @@
+{
+	"nodes": [
+		{
+			"x": -18910,
+			"y": -5109,
+			"id": 0,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 1
+			}
+		},
+		{
+			"x": -18616,
+			"y": -4858,
+			"id": 1,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 1
+			}
+		},
+		{
+			"x": -18584,
+			"y": -4729,
+			"id": 3,
+			"type": "hrt.shgraph.nodes.Min",
+			"properties": {}
+		},
+		{
+			"x": -18716,
+			"y": -5076,
+			"id": 4,
+			"type": "hrt.shgraph.nodes.Cond",
+			"properties": {
+				"condition": "OpEq"
+			}
+		},
+		{
+			"x": -18304,
+			"y": -4911,
+			"id": 5,
+			"type": "hrt.shgraph.nodes.IfCondition",
+			"properties": {}
+		},
+		{
+			"x": -18910,
+			"y": -5021,
+			"id": 6,
+			"type": "hrt.shgraph.nodes.FloatConst",
+			"properties": {
+				"value": 1,
+				"name": ""
+			}
+		},
+		{
+			"x": -19074,
+			"y": -4848,
+			"id": 7,
+			"type": "hrt.shgraph.nodes.FloatConst",
+			"properties": {
+				"value": 1,
+				"name": ""
+			}
+		},
+		{
+			"x": -18721,
+			"y": -4661,
+			"id": 8,
+			"type": "hrt.shgraph.nodes.Divide",
+			"properties": {
+				"prop_a": null,
+				"prop_b": null
+			}
+		},
+		{
+			"x": -18861,
+			"y": -4620,
+			"id": 9,
+			"type": "hrt.shgraph.nodes.Subtract",
+			"properties": {
+				"prop_a": null,
+				"prop_b": null
+			}
+		},
+		{
+			"x": -19074,
+			"y": -4627,
+			"id": 10,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 1
+			}
+		},
+		{
+			"x": -18879,
+			"y": -4705,
+			"id": 11,
+			"type": "hrt.shgraph.ShaderParam",
+			"properties": {
+				"parameterId": 0
+			}
+		},
+		{
+			"x": -18082,
+			"y": -4874,
+			"id": 12,
+			"type": "hrt.shgraph.ShaderOutput",
+			"properties": {
+				"variable": [
+					"Out",
+					"TFloat",
+					[]
+				]
+			}
+		}
+	],
+	"edges": [
+		{
+			"idOutput": 7,
+			"nameOutput": "output",
+			"idInput": 3,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 8,
+			"nameOutput": "output",
+			"idInput": 3,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 0,
+			"nameOutput": "output",
+			"idInput": 4,
+			"nameInput": "leftVar"
+		},
+		{
+			"idOutput": 6,
+			"nameOutput": "output",
+			"idInput": 4,
+			"nameInput": "rightVar"
+		},
+		{
+			"idOutput": 4,
+			"nameOutput": "output",
+			"idInput": 5,
+			"nameInput": "condition"
+		},
+		{
+			"idOutput": 1,
+			"nameOutput": "output",
+			"idInput": 5,
+			"nameInput": "trueVar"
+		},
+		{
+			"idOutput": 3,
+			"nameOutput": "output",
+			"idInput": 5,
+			"nameInput": "falseVar"
+		},
+		{
+			"idOutput": 9,
+			"nameOutput": "output",
+			"idInput": 8,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 11,
+			"nameOutput": "output",
+			"idInput": 8,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 7,
+			"nameOutput": "output",
+			"idInput": 9,
+			"nameInput": "a"
+		},
+		{
+			"idOutput": 10,
+			"nameOutput": "output",
+			"idInput": 9,
+			"nameInput": "b"
+		},
+		{
+			"idOutput": 5,
+			"nameOutput": "output",
+			"idInput": 12,
+			"nameInput": "input"
+		}
+	],
+	"parameters": [
+		{
+			"id": 0,
+			"name": "base",
+			"type": [
+				"TFloat",
+				""
+			],
+			"defaultValue": 0
+		},
+		{
+			"id": 1,
+			"name": "blend",
+			"type": [
+				"TFloat",
+				""
+			],
+			"defaultValue": 0
+		}
+	]
+}

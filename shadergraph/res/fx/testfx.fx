@@ -1,6 +1,5 @@
 {
 	"type": "fx",
-	"duration": 3,
 	"cullingRadius": 3,
 	"children": [
 		{
@@ -28,7 +27,7 @@
 							"mode": "PBR",
 							"blend": "None",
 							"shadows": true,
-							"culling": true,
+							"culling": "Back",
 							"depthTest": "Less",
 							"colorMask": 15,
 							"enableStencil": false
@@ -63,7 +62,8 @@
 								"PBR": {
 									"mode": "BeforeTonemapping",
 									"blend": "Alpha",
-									"shadows": false
+									"shadows": false,
+									"colorMask": 15
 								},
 								"Default": {
 									"kind": "Alpha",
@@ -132,6 +132,16 @@
 							]
 						}
 					]
+				},
+				{
+					"type": "hlshader",
+					"name": "Dissolve",
+					"source": "shaders/Dissolve.hlshader",
+					"props": {
+						"width": 1,
+						"progress": 1,
+						"saturation": 0
+					}
 				}
 			]
 		},
@@ -152,6 +162,15 @@
 							"shadows": true,
 							"culling": true,
 							"light": true
+						},
+						"PBR": {
+							"mode": "PBR",
+							"blend": "None",
+							"shadows": true,
+							"culling": "Back",
+							"depthTest": "Less",
+							"colorMask": 15,
+							"enableStencil": false
 						}
 					},
 					"children": [
